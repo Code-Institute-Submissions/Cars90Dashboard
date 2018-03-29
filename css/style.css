@@ -1,0 +1,108 @@
+.navbar{
+	position: fixed;
+	margin-bottom: 0;
+	width: 100%;
+	border: none;
+	background-color: #F1DAAD;
+	opacity: 0;
+}
+.navbar-default .navbar-brand {
+	color: #804620;
+	font-family: "ubuntu", serif;
+	font-weight: 700;
+	font-size: 2em;
+	letter-spacing: 2px;
+}
+.navbar-default .navbar-nav>li>a {
+	color: #804620;
+	font-family: "ubuntu", serif;
+	font-weight: 700;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	
+	text-transform: uppercase;
+
+}
+.slider{
+    background-image: url('../images/road.jpg');
+    height: 80vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.info-text{
+    background-color: #e1c340;
+    color: #804620;
+    font-size: 2em;
+    text-align: center;
+    margin-top: -200px;
+    margin-bottom: 20px;
+    padding: 30px;
+    font-family: "Ubuntu", serif;
+    box-shadow: 4px 4px 4px #000;
+    opacity: 0;
+}
+
+body{
+   background-color: #F1DAAD;
+}
+.jumbotron{
+	border-radius: 6px;
+	color: #dab180;
+	font-weight: 700;
+	text-shadow: 3px 2px #0a0a0a;
+	background-color: #0000003b;
+	text-align: center;
+}
+
+/*---------------------------------------------Music page*/
+
+.title-format{
+	text-align: center;
+	font-family: "Ubuntu", serif;
+	font-weight: 700;
+	margin-bottom: 40px;
+
+}
+.text-format{
+	text-align: justify;
+	font-family: "Ubuntu", serif;
+	color: #804620;
+	font-size: 24px;
+}
+.thumbnail{
+	border: none;
+	background-color: transparent;
+
+}
+.text-center{
+	padding-top: 15px;
+
+}
+.pointer{
+	cursor: pointer;
+}
+#iconic-car{
+	box-shadow: 4px 4px 4px #000;
+}
+
+
+
+svg:not(:root) {
+    background-color: #e1c340;
+    box-shadow: 4px 4px 4px #000;
+}
+
+div.dc-chart {
+    float: none;
+    display: block;
+    text-align: center;
+}
