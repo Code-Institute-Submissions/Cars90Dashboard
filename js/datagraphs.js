@@ -22,7 +22,8 @@ function show_fuel_type(ndx){
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dim)
         .group(group)
-        .transitionDuration(500)
+        .transitionDuration(1500)
+        .colors(d3.scale.ordinal().range(['#1E2080', '#801E20']))
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Fuel Type")
@@ -39,7 +40,8 @@ function show_type(ndx){
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dim)
         .group(group)
-        .transitionDuration(500)
+        .transitionDuration(1500)
+        .colors(d3.scale.ordinal().range(['#1E2080']))
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Type of car")
@@ -54,63 +56,28 @@ function show_made_in(ndx){
 		dc.pieChart("#made-in")
 		.height(300)
 		.radius(100)
-		.transitionDuration(500)
+		.innerRadius(50)
+		.colors(d3.scale.ordinal().range(['#1E2080', '#CD3033', '#801E20']))
+		.transitionDuration(1500)
 		.dimension(dim)
 		.group(group);
 		
 }
 
+
 function show_reliability(ndx){
-    var price_dim = ndx.dimension(dc.pluck("Price"));
-    
-    var maxPrice = price_dim.bottom(1)[0].Price;
-    var minPrice = price_dim.top(1)[0].Price;
-    console.log(maxPrice);
-    
-    
-    var usaCar = price_dim.group().reduceSum(function (d){
-        if(d.Country == "USA"){
-            return +d.Reliability;
-        }else{
-            return 0;
-        }
-    });
-    var europeCar = price_dim.group().reduceSum(function (d){
-        if(d.Country == "Europe"){
-            return +d.Reliability;
-        }else{
-            return 0;
-        }
-    });
-    var japanCar = price_dim.group().reduceSum(function (d){
-        if(d.Country == "Japan"){
-            return +d.Reliability;
-        }else{
-            return 0;
-        }
-    });
-    
-    
-    var compositeChart = dc.compositeChart("#reliability-price")
-    compositeChart
-        .width(700)
-        .height(200)
-        .dimension(price_dim)
-        .x(d3.scale.ordinal().domain([minPrice,maxPrice]))
-        .xAxisLabel("price")
-        .yAxisLabel("reliability")
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-        .renderHorizontalGridLines(true)
-        .compose([
-            dc.lineChart(compositeChart)
-                .colors("green")
-                .group(usaCar, "USA"),
-            dc.lineChart(compositeChart)
-                .colors("red")
-                .group(europeCar, "Europe"),
-            dc.lineChart(compositeChart)
-                .colors("blue")
-                .group(japanCar, "Japan")
-            ]);
+	var dim = ndx.dimension(dc.pluck("Reliability"));
+	var group = dim.group();
+	
+		dc.rowChart("#reliability-price")
+		.height(300)
+		.height(250)
+		.dimension(dim)
+		.group(group)
+		.colors(d3.scale.ordinal().range(['#1E2080', '#3033CD', '#CD3033', '#801E20','#1F801E']))
+		.transitionDuration(1500);
+		
    
 }
+
+

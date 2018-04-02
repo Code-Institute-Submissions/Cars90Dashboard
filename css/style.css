@@ -1,28 +1,39 @@
+/*---------------------------------------------Nav bar*/
 .navbar{
 	position: fixed;
 	margin-bottom: 0;
 	width: 100%;
 	border: none;
-	background-color: #F1DAAD;
+	background-color: #1F1E24;
 	opacity: 0;
 }
 .navbar-default .navbar-brand {
-	color: #804620;
+	color: #b7bd7f;
 	font-family: "ubuntu", serif;
 	font-weight: 700;
 	font-size: 2em;
 	letter-spacing: 2px;
 }
 .navbar-default .navbar-nav>li>a {
-	color: #804620;
+	color: #b7bd7f;
 	font-family: "ubuntu", serif;
 	font-weight: 700;
 	font-size: 1.5em;
 	letter-spacing: 1px;
-	
+	cursor: pointer;
 	text-transform: uppercase;
 
 }
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fafafa;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+}
+.active{
+	text-decoration: underline;
+}
+/*---------------------------------------------first section*/
 .slider{
     background-image: url('../images/road.jpg');
     height: 80vh;
@@ -39,9 +50,9 @@
 }
 
 .info-text{
-    background-color: #e1c340;
-    color: #804620;
-    font-size: 2em;
+    background-color: #b7bd7f;
+    color: #00493a;
+    font-size: 11px;
     text-align: center;
     margin-top: -200px;
     margin-bottom: 20px;
@@ -52,20 +63,26 @@
 }
 
 body{
-   background-color: #F1DAAD;
+   background-color: #EAF0F4;
 }
 .jumbotron{
 	border-radius: 6px;
-	color: #dab180;
+	color: #b7bd7f; /*#dab180;*/
 	font-weight: 700;
+	font-size: 24px;
 	text-shadow: 3px 2px #0a0a0a;
 	background-color: #0000003b;
 	text-align: center;
 }
+.jumbotron h1{
+	font-size: 25px;
+}
 
-/*---------------------------------------------Music page*/
+/*---------------------------------------------Styles for texts and titles*/
 
 .title-format{
+	color: #00493a;
+	font-size: 18px;
 	text-align: center;
 	font-family: "Ubuntu", serif;
 	font-weight: 700;
@@ -75,9 +92,10 @@ body{
 .text-format{
 	text-align: justify;
 	font-family: "Ubuntu", serif;
-	color: #804620;
-	font-size: 24px;
+	color: #00493a;
+	font-size: 14px;
 }
+/*---------------------------------------------top iconic cars section*/
 .thumbnail{
 	border: none;
 	background-color: transparent;
@@ -94,10 +112,10 @@ body{
 	box-shadow: 4px 4px 4px #000;
 }
 
-
+/*---------------------------------------------dashbord section*/
 
 svg:not(:root) {
-    background-color: #e1c340;
+    background-color: #32CD30;
     box-shadow: 4px 4px 4px #000;
 }
 
@@ -105,4 +123,50 @@ div.dc-chart {
     float: none;
     display: block;
     text-align: center;
+}
+
+.graph-text{
+	margin: 30px 25px 40px 30px;
+}
+
+
+/*---------------------------------------------footer*/
+.footer{
+	color: #b7bd7f;
+	width: 100%;
+	font-family: "ubuntu", serif;
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 1px;
+	background-color: #1F1E24;
+	opacity: 0.5;
+}
+
+
+/*---------------------------------------------media queries*/
+
+@media (min-width:768px) {
+	.text-format, .info-text {
+		font-size: 20px;
+	}
+	.title-format{
+		font-size: 25px;
+	}
+	.jumbotron h1{
+	font-size: 30px;
+}
+
+}
+
+@media (min-width:1024px) {
+	.text-format, .info-text {
+		font-size: 27px;
+	}
+	.title-format{
+		font-size: 32px;
+	}
+	.jumbotron h1{
+	font-size: 55px;
+}
+
 }
