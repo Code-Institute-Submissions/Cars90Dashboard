@@ -17,13 +17,13 @@ function show_fuel_type(ndx){
 	var group = dim.group();
 	
 	dc.barChart("#fuel-type")
-        .width(350)
+        .width(330)
         .height(250)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dim)
         .group(group)
         .transitionDuration(1500)
-        .colors(d3.scale.ordinal().range(['#1E2080', '#801E20']))
+        .colors(d3.scale.ordinal().range(['#00493a']))
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Fuel Type")
@@ -35,13 +35,13 @@ function show_type(ndx){
 	var group = dim.group();
 	
 		dc.barChart("#by-type")
-        .width(350)
+        .width(330)
         .height(250)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dim)
         .group(group)
         .transitionDuration(1500)
-        .colors(d3.scale.ordinal().range(['#1E2080']))
+        .colors(d3.scale.ordinal().range(['#00493a']))
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Type of car")
