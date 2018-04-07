@@ -1,4 +1,3 @@
-
 var i = 0;
 var clickCount = 0;
 
@@ -55,27 +54,31 @@ var carText = ".car-description"
 
 
 // function for main/top image
+setTimeout("changeImage()", 5000);
+
 function changeImage() {
-    $(".slider").css({
-        "background-image": images[i]
-    });
-    if (i < images.length) {
+    if (i < images.length - 1) {
         i++;
-    } else {
+    }
+    else {
         i = 0;
     }
-    setTimeout("changeImage()", 3000);
+    $(".slider").animate({ opacity: 0 }, 1000, function() {
+        $(this).css({ "background-image": images[i] }, 10)
+            .animate({ opacity: 1 }, { duration: 1000 });
+    });
+    setTimeout("changeImage()", 6000);
 }
 
-changeImage();
+//animation when page loads
+$(".info-text").animate({ "opacity": "1", "height": "100%", "marginTop": "-20px" }, 1500);
+$(".navbar").animate({ "opacity": "1" }, 1500);
 
-$(".info-text").animate({"opacity": "1","height": "100%","marginTop": "-20px"}, 2000);
-$(".navbar").animate({"opacity": "1"}, 2000);
 
 $(window).on("resize", function() {
     location.reload();
 })
-
+// function for the menu on mobile
 $(".navbar-toggle").on("click touch", function() {
     $(".collapse").toggle();
 })
@@ -86,7 +89,7 @@ $(".next").click(function() {
     if (clickCount >= topImages.length) {
         clickCount = 0;
     }
-    $(carImage).animate({"opacity": "0"}, 10).attr('src', topImages[clickCount]).animate({"opacity": "1"}, 700);
+    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(700);
     $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(700);
     $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(700);
 });
@@ -97,7 +100,7 @@ $(".prev").click(function() {
     if (clickCount < 0) {
         clickCount = topImages.length - 1;
     }
-    $(carImage).animate({"opacity": "0"}, 10).attr('src', topImages[clickCount]).animate({"opacity": "1"}, 700);
+    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(700);
     $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(700);
     $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(700);
 });
