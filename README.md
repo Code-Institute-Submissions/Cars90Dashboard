@@ -18,6 +18,12 @@
 * Crossfilter.js
 
 ----
+## Requirements :
+* Build a data dashboard that visualizes a dataset of your choice
+* Your data can be stored locally (e.g., in a js file) or sourced from an API
+* Visualise your data using D3.js and dc.js
+
+----
 ## Guidelines:
 * Create a Single-Page Application (SPA)
 * Incorporate links or buttons to allow your user to navigate the site and reset/control the site functionality
@@ -32,6 +38,18 @@
 ## About project:
 >Wanted to be fairly simple and friendly for the any user who wants visualize a data set. I tried to use only a few colors that will express old but fun. I manage to make the website responsive on all platforms using Bootstrap and JavaScript. Also I have build a image slider with controls which will change image, title and paragraph content at the same time and an automatic image changer using JavaScript and jQuery. Although there are external libraries that are already build I wanted to make it from scratch to test my knowledge, to get experience and to face different problems along the way . One of the problems was when I managed to crash to browser because I had an infinite loop. If you have any suggestions please let me know.
 
+## Deployment 
+I used GitHub Pages for deployment using my master branch as the source.
+
+## Testing 
+For the testing I used :
+* Google Developer Tools (responsive mode)
+* Running the website in different browsers 
+* Running the website on different devices phones and tablets (apple, android)
 
 
-https://dragos0000.github.io/Cars90Dashboard/
+## Credits 
+### Content  ###
+The text about the cars was copied from https://www.zeroto60times.com/2016/03/most-iconic-1990s-cars/
+### Media  ###
+The photos in the site were obtained from Google.

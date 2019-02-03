@@ -63,9 +63,9 @@ function changeImage() {
     else {
         i = 0;
     }
-    $(".slider").animate({ opacity: 0 }, 1000, function() {
-        $(this).css({ "background-image": images[i] }, 10)
-            .animate({ opacity: 1 }, { duration: 1000 });
+    $(".slider").animate({ opacity: 0.4 }, 1000, function() {
+        $(this).css({ "background-image": images[i] }, 100)
+            .animate({ opacity: 1 }, { duration: 1600 });
     });
     setTimeout("changeImage()", 6000);
 }
@@ -89,9 +89,9 @@ $(".next").click(function() {
     if (clickCount >= topImages.length) {
         clickCount = 0;
     }
-    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(700);
-    $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(700);
-    $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(700);
+    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(40);
+    $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(40);
+    $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(40);
 });
 
 // function for the prev button on the slider
@@ -100,9 +100,9 @@ $(".prev").click(function() {
     if (clickCount < 0) {
         clickCount = topImages.length - 1;
     }
-    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(700);
-    $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(700);
-    $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(700);
+    $(carImage).fadeOut(10).attr('src', topImages[clickCount]).fadeIn(40);
+    $(carTitle).fadeOut(10).text(topTitle[clickCount]).fadeIn(40);
+    $(carText).fadeOut(10).load(topText[clickCount]).fadeIn(40);
 });
 
 
